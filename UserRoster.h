@@ -1,22 +1,24 @@
 #pragma once
 #include<vector>
 #include<string>
+#include<iostream>
 #include "User.h"
 #include "Administrator.h"
 
-class UserRoster
+class UserRoster : public myListADT<User>
 {
 public:
 	UserRoster();
 	
-	//Adds a user to _Users
-	void addUser(User usr);
+	virtual void add(User& element);
+	virtual std::vector<User>& getAll();
+	virtual User* search(std::string name);
+	virtual bool isEmpty() const;
+	virtual unsigned int size() const;
 
-	//returns the vector representation of _Users
-	vector<User> getUsers();
+	void deleteUser(string name, Library& lib);
 
-	//finds the user of that name and returns a reference to it.
-	User& searchUser(string name);
+	friend std::ostream& operator<<(std::ostream& os, UserRoster& anInstance);
 
 private:
 	vector<User> _Users;

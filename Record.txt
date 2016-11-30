@@ -1,7 +1,1 @@
-<Moby Dick , 1/1/1>
-Bibliothek: [
-<Moby Dick , 1/1/1>
-<PrideAndPrejudice , 2/1/1>
-<Death of a Salesman , 3/1/1>
-<World War Z , 4/1/1>
-]
+12/04/2016

@@ -7,17 +7,18 @@
 class Administrator : public User {
 public:
 	Administrator(string name);
+	Administrator(string name, std::vector<Book> books);
 
 	//creates a book with the given name and adds it to the given library
 	void addNewBookToLibrary(string bookName, Library& lib);
 
-	//alters the book of the given name if it is in the given User's _books by changing the due date to the given due date.
-	void alterDueDateOfFor(string userName, string bookName, string newDueDate, UserRoster usrRstr);
-
+	//returns the default due date found in "Record.txt"
 	static string getDefaultDueDate();
+	//non-static method for changing the default due date
 	void changeDefaultDueDate(string newDueDate);
 
-
+	//appends this user to "UserRecord.txt"
+	void appendUserRecord();
 	
 private:
 	static string DefaultDueDate;

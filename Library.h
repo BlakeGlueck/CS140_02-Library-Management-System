@@ -1,18 +1,23 @@
 #pragma once
 #include<vector>
+#include<iostream>
 #include "Book.h"
+#include "myListADT.h"
+//#include "UserRoster.h"
 
-
-class Library
+class Library : public myListADT<Book> 
 {
 public:
 	Library();
 
-	//adds a Book to the Library.
-	void addBook(Book aBook);
+	void add(Book& element);
+	std::vector<Book>& getAll();
+	Book* search(std::string name);
+	bool isEmpty() const;
+	unsigned int size() const;
+	Book& checkOutBook(std::string name);
 
-	//returns the whole bookshelf
-	vector<Book> const getBooks();
+	void deleteBook(string name);
 
 	friend std::ostream& operator<<(std::ostream& os, Library& anInstance);
 
